@@ -1,145 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WaitlistForm from "@/components/WaitlistForm";
+import { liveApps, upcomingApps, type App } from "@/lib/apps-data";
 
-const apps = [
-  {
-    id: "iva-companion",
-    icon: "✨",
-    name: "IVA Companion",
-    description: "Your intelligent virtual assistant. Always there, always warm, always human.",
-    category: "AI",
-    status: "live",
-    downloadUrl: "#",
-  },
-  {
-    id: "repuradar",
-    icon: "📡",
-    name: "RepuRadar",
-    description: "AI reputation monitor for small businesses. Never miss a review again.",
-    category: "AI",
-    status: "upcoming",
-    downloadUrl: null,
-  },
-  {
-    id: "caresync",
-    icon: "🏥",
-    name: "CareSync",
-    description: "Family care coordinator for elderly loved ones. Stay connected, stay informed.",
-    category: "Health",
-    status: "upcoming",
-    downloadUrl: null,
-  },
-  {
-    id: "grantpilot",
-    icon: "📋",
-    name: "GrantPilot",
-    description: "AI assistant for writing and managing grants. Save 30 hours per application.",
-    category: "Productivity",
-    status: "upcoming",
-    downloadUrl: null,
-  },
-  {
-    id: "kidtrack",
-    icon: "👧",
-    name: "KidTrack",
-    description: "Gamified habit tracker for kids. Make good habits fun and rewarding.",
-    category: "Tools",
-    status: "upcoming",
-    downloadUrl: null,
-  },
-  {
-    id: "veles",
-    icon: "🌿",
-    name: "Veles",
-    description: "AI garden architect. Grow smarter, grow healthier, grow organic.",
-    category: "AI",
-    status: "upcoming",
-    downloadUrl: null,
-  },
-];
-
-const liveApps = apps.filter((a) => a.status === "live");
-const upcomingApps = apps.filter((a) => a.status === "upcoming");
-
-// ── Waitlist Form ─────────────────────────────────────────────────────────────
-
-function WaitlistForm({ appId }: { appId: string }) {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "duplicate" | "error">("idle");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setStatus("loading");
-
-    const res = await fetch("/api/waitlist", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, app_id: appId }),
-    });
-
-    if (res.ok) {
-      setStatus("success");
-    } else if (res.status === 409) {
-      setStatus("duplicate");
-    } else {
-      setStatus("error");
-    }
-  };
-
-  if (status === "success") {
-    return (
-      <motion.p
-        initial={{ opacity: 0, y: 6 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-sm text-[#F6C98F] text-center py-2"
-      >
-        You&apos;re on the list! 🌅
-      </motion.p>
-    );
-  }
-
-  if (status === "duplicate") {
-    return (
-      <motion.p
-        initial={{ opacity: 0, y: 6 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-sm text-white/40 text-center py-2"
-      >
-        You&apos;re already on the list!
-      </motion.p>
-    );
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="flex gap-2">
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter your email"
-        required
-        className="flex-1 min-w-0 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white placeholder-white/25 text-xs focus:outline-none focus:border-[#F6C98F]/40 transition-colors duration-300"
-      />
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="px-4 py-2 bg-[#F6C98F] text-[#0F1A2E] text-xs font-semibold rounded-full hover:bg-[#FAD7C4] transition-colors duration-300 whitespace-nowrap disabled:opacity-60"
-      >
-        {status === "loading" ? "..." : "Join Waitlist"}
-      </button>
-    </form>
-  );
-}
-
-// ── Live App Card ─────────────────────────────────────────────────────────────
-
-function LiveAppCard({ app, index }: { app: typeof apps[0]; index: number }) {
+function LiveAppCard({ app, index }: { app: App; index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -172,9 +40,7 @@ function LiveAppCard({ app, index }: { app: typeof apps[0]; index: number }) {
   );
 }
 
-// ── Upcoming App Card ─────────────────────────────────────────────────────────
-
-function UpcomingAppCard({ app, index }: { app: typeof apps[0]; index: number }) {
+function UpcomingAppCard({ app, index }: { app: App; index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -203,14 +69,11 @@ function UpcomingAppCard({ app, index }: { app: typeof apps[0]; index: number })
   );
 }
 
-// ── Page ──────────────────────────────────────────────────────────────────────
-
 export default function AppsPage() {
   return (
     <main className="min-h-screen bg-[#0F1A2E]">
       <Navbar />
 
-      {/* Header */}
       <section className="pt-40 pb-16 px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -225,7 +88,7 @@ export default function AppsPage() {
         </motion.div>
       </section>
 
-      {/* Section 1 — Our Apps (Live) */}
+      {/* Our Apps — Live */}
       <section className="px-6 pb-20">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -237,7 +100,6 @@ export default function AppsPage() {
             <h2 className="font-playfair text-2xl font-semibold text-white">Our Apps</h2>
             <p className="text-white/40 text-sm mt-1">Ready to use, right now.</p>
           </motion.div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {liveApps.map((app, i) => (
               <LiveAppCard key={app.id} app={app} index={i} />
@@ -251,7 +113,7 @@ export default function AppsPage() {
         <div className="h-px bg-gradient-to-r from-transparent via-[#F6C98F]/40 to-transparent" />
       </div>
 
-      {/* Section 2 — Coming Soon (Upcoming + Waitlist) */}
+      {/* Coming Soon */}
       <section className="px-6 pb-32">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -263,7 +125,6 @@ export default function AppsPage() {
             <h2 className="font-playfair text-2xl font-semibold text-white">Coming Soon</h2>
             <p className="text-white/40 text-sm mt-1">Join the waitlist and be first to know.</p>
           </motion.div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {upcomingApps.map((app, i) => (
               <UpcomingAppCard key={app.id} app={app} index={i} />
