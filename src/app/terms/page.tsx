@@ -45,8 +45,11 @@ export default function TermsPage() {
             </div>
 
             <div>
-              <h2 className="font-playfair text-white text-xl font-semibold mb-3">5. Intellectual Property</h2>
-              <p>All content on zoratech.tech — including text, design, logos, and code — is the property of ZoraTech and may not be reproduced, distributed, or used without explicit written permission.</p>
+              <h2 className="font-playfair text-white text-xl font-semibold mb-3">5. Intellectual Property & Copyright</h2>
+              <p>All content on zoratech.tech — including but not limited to text, design, logos, illustrations, and source code — is the exclusive intellectual property of ZoraTech.</p>
+              <p className="mt-3">© 2026 ZoraTech. All rights reserved.</p>
+              <p className="mt-3">No part of this website or its content may be reproduced, distributed, transmitted, displayed, published, or used in any form or by any means — electronic, mechanical, or otherwise — without the prior explicit written permission of ZoraTech. Unauthorized use of any ZoraTech materials constitutes an infringement of intellectual property rights and may be subject to legal action.</p>
+              <p className="mt-3">To request permission for use of any ZoraTech content, contact us at: <span className="text-[#F6C98F]">dejan797me@gmail.com</span></p>
             </div>
 
             <div>

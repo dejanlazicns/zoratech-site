@@ -43,7 +43,7 @@ export default function Footer() {
 
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/25 text-sm">
-            © 2026 ZoraTech. Built with vision.
+            © 2026 ZoraTech. All rights reserved.
           </p>
           <nav className="flex flex-wrap justify-center gap-5">
             <Link href="/privacy-policy" className="text-xs text-white/25 hover:text-[#F6C98F] transition-colors duration-300">
