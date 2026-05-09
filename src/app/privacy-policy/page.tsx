@@ -57,7 +57,7 @@ export default function PrivacyPolicyPage() {
             <div>
               <h2 className="font-playfair text-white text-xl font-semibold mb-3">5. Data Deletion Requests</h2>
               <p>To request deletion of your personal data, contact us at:</p>
-              <p className="mt-3 font-medium text-[#F6C98F]">dejan797me@gmail.com</p>
+              <p className="mt-3 font-medium text-[#F6C98F]">contact@zoratech.tech</p>
               <p className="mt-3">We will process all deletion requests within 30 days.</p>
             </div>
 
@@ -69,7 +69,7 @@ export default function PrivacyPolicyPage() {
             <div>
               <h2 className="font-playfair text-white text-xl font-semibold mb-3">7. Contact</h2>
               <p>For any privacy-related questions, contact us at:</p>
-              <p className="mt-3 font-medium text-[#F6C98F]">dejan797me@gmail.com</p>
+              <p className="mt-3 font-medium text-[#F6C98F]">contact@zoratech.tech</p>
             </div>
 
           </div>

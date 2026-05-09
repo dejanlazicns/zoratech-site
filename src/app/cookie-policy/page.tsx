@@ -56,7 +56,7 @@ export default function CookiePolicyPage() {
             <div>
               <h2 className="font-playfair text-white text-xl font-semibold mb-3">5. Contact</h2>
               <p>For any cookie-related questions, contact us at:</p>
-              <p className="mt-3 font-medium text-[#F6C98F]">dejan797me@gmail.com</p>
+              <p className="mt-3 font-medium text-[#F6C98F]">contact@zoratech.tech</p>
             </div>
 
           </div>
