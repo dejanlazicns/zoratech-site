@@ -41,10 +41,21 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="border-t border-white/5 pt-8 text-center">
+        <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/25 text-sm">
             © 2026 ZoraTech. Built with vision.
           </p>
+          <nav className="flex flex-wrap justify-center gap-5">
+            <Link href="/privacy-policy" className="text-xs text-white/25 hover:text-[#F6C98F] transition-colors duration-300">
+              Privacy Policy
+            </Link>
+            <Link href="/cookie-policy" className="text-xs text-white/25 hover:text-[#F6C98F] transition-colors duration-300">
+              Cookie Policy
+            </Link>
+            <Link href="/terms" className="text-xs text-white/25 hover:text-[#F6C98F] transition-colors duration-300">
+              Terms of Service
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>
