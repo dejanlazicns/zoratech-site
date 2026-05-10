@@ -17,7 +17,7 @@ export default function HeroSection() {
       <div className="hero-gradient absolute inset-0 z-0" />
       <div className="hero-glow absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] z-0 opacity-20 blur-3xl" />
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center pt-24 md:pt-0">
         <motion.h1
           {...fadeUp(0.25)}
           className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
