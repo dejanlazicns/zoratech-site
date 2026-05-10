@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -56,7 +57,7 @@ export default function CookiePolicyPage() {
             <div>
               <h2 className="font-playfair text-white text-xl font-semibold mb-3">5. Contact</h2>
               <p>For any cookie-related questions, contact us at:</p>
-              <p className="mt-3 font-medium text-[#F6C98F]">contact@zoratech.tech</p>
+              <Link href="/contact" className="mt-3 font-medium text-[#F6C98F] hover:underline underline-offset-4 block">contact@zoratech.tech</Link>
             </div>
 
           </div>
