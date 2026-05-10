@@ -4,41 +4,11 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
+import { apps } from "@/lib/apps-data";
 
-const apps = [
-  {
-    icon: (
-      <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
-      </svg>
-    ),
-    name: "App Name",
-    description: "A brief description of what this app does and how it helps users in their daily life.",
-    href: "/apps",
-  },
-  {
-    icon: (
-      <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-      </svg>
-    ),
-    name: "App Name",
-    description: "A brief description of what this app does and how it helps users in their daily life.",
-    href: "/apps",
-  },
-  {
-    icon: (
-      <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-      </svg>
-    ),
-    name: "App Name",
-    description: "A brief description of what this app does and how it helps users in their daily life.",
-    href: "/apps",
-  },
-];
+const featuredApps = apps.slice(0, 3);
 
-function AppCard({ icon, name, description, href, index }: { icon: React.ReactNode; name: string; description: string; href: string; index: number }) {
+function AppCard({ app, index }: { app: typeof apps[0]; index: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
@@ -51,12 +21,17 @@ function AppCard({ icon, name, description, href, index }: { icon: React.ReactNo
       whileHover={{ y: -6 }}
       className="zora-card flex flex-col p-8 rounded-2xl bg-[#1A2A4F]/50 border border-white/5 hover:border-[#F6C98F]/20 group"
     >
-      <div className="text-[#F6C98F] mb-6">{icon}</div>
-      <h3 className="font-playfair text-white font-semibold text-xl mb-3">
-        {name}
-      </h3>
-      <p className="text-white/50 text-sm leading-relaxed flex-1 mb-6">{description}</p>
-      <Link href={href}>
+      <div className="flex items-start justify-between mb-6">
+        <span className="text-4xl">{app.icon}</span>
+        {app.status === "live" ? (
+          <span className="text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-green-400/40 text-green-400 bg-green-400/10">Live</span>
+        ) : (
+          <span className="text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-[#F6C98F]/40 text-[#F6C98F] bg-[#F6C98F]/10">Coming Soon</span>
+        )}
+      </div>
+      <h3 className="font-playfair text-white font-semibold text-xl mb-3">{app.name}</h3>
+      <p className="text-white/50 text-sm leading-relaxed flex-1 mb-6">{app.description}</p>
+      <Link href={`/apps/${app.id}`}>
         <span className="text-[#F6C98F] text-sm font-medium group-hover:underline underline-offset-4 transition-all duration-200">
           Learn More →
         </span>
@@ -87,8 +62,8 @@ export default function FeaturedApps() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {apps.map((app, i) => (
-            <AppCard key={i} {...app} index={i} />
+          {featuredApps.map((app, i) => (
+            <AppCard key={app.id} app={app} index={i} />
           ))}
         </div>
       </div>
