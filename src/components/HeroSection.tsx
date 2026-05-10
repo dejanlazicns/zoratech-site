@@ -18,13 +18,6 @@ export default function HeroSection() {
       <div className="hero-glow absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] z-0 opacity-20 blur-3xl" />
 
       <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center">
-        <motion.p
-          {...fadeUp(0.1)}
-          className="text-[#F6C98F] text-sm font-medium tracking-widest uppercase mb-6"
-        >
-          Where warm technology meets human clarity
-        </motion.p>
-
         <motion.h1
           {...fadeUp(0.25)}
           className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
