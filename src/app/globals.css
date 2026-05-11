@@ -21,6 +21,10 @@
   --zora-card-shadow-hover: 0 10px 36px rgba(196, 146, 74, 0.28);
 
   --hero-gradient: linear-gradient(135deg, #F8F3EA 0%, #EDE4D3 50%, #F5ECD8 75%, #F0E6D0 100%);
+
+  --upcoming-section-gradient: linear-gradient(180deg, #EDE4D3 0%, #E4D8C0 100%);
+  --join-section-gradient:     linear-gradient(180deg, #E4D8C0 0%, #EDE4D3 100%);
+  --upcoming-card-gradient:    linear-gradient(135deg, #E4D8C0 0%, #EDE4D3 100%);
 }
 
 /* Dark mode — current deep navy palette */
@@ -35,6 +39,10 @@
   --zora-card-shadow-hover: 0 10px 36px rgba(246, 201, 143, 0.22);
 
   --hero-gradient: linear-gradient(135deg, #0F1A2E 0%, #1A2A4F 50%, #2a3a60 75%, #1e2d4a 100%);
+
+  --upcoming-section-gradient: linear-gradient(180deg, #0F1A2E 0%, #1A2A4F 100%);
+  --join-section-gradient:     linear-gradient(180deg, #1A2A4F 0%, #0F1A2E 100%);
+  --upcoming-card-gradient:    linear-gradient(135deg, #1A2A4F 0%, #0F1A2E 100%);
 }
 
 * {
@@ -86,11 +94,11 @@ body {
   }
 
   .upcoming-card-bg {
-    background: linear-gradient(135deg, #1A2A4F 0%, #0F1A2E 100%);
+    background: var(--upcoming-card-gradient);
   }
 
   .upcoming-card-inner-glow {
-    background: radial-gradient(circle, #F6C98F, transparent);
+    background: radial-gradient(circle, rgb(var(--color-gold)), transparent);
   }
 
   .video-blend-screen {
@@ -99,11 +107,11 @@ body {
   }
 
   .upcoming-section-bg {
-    background: linear-gradient(180deg, #0F1A2E 0%, #1A2A4F 100%);
+    background: var(--upcoming-section-gradient);
   }
 
   .join-section-bg {
-    background: linear-gradient(180deg, #1A2A4F 0%, #0F1A2E 100%);
+    background: var(--join-section-gradient);
   }
 
   .gold-radial-glow {
