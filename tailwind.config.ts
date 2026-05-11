@@ -6,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -14,6 +15,11 @@ const config: Config = {
         "soft-peach": "#FAD7C4",
         "horizon-blue": "#1A2A4F",
         "zt-white": "#FFFFFF",
+        "zt-bg":         "rgb(var(--color-bg) / <alpha-value>)",
+        "zt-surface":    "rgb(var(--color-surface) / <alpha-value>)",
+        "zt-text":       "rgb(var(--color-text) / <alpha-value>)",
+        "zt-gold":       "rgb(var(--color-gold) / <alpha-value>)",
+        "zt-gold-hover": "rgb(var(--color-gold-hover) / <alpha-value>)",
       },
       fontFamily: {
         playfair: ["Playfair Display", "serif"],

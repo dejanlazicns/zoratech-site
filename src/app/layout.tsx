@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import CookieBanner from "@/components/CookieBanner";
+import ThemeProvider from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "ZoraTech — Where warm technology meets human clarity",
@@ -13,10 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
-        {children}
-        <CookieBanner />
+        <ThemeProvider>
+          {children}
+          <CookieBanner />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -4,11 +4,37 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
+/* Light mode — warm sunrise palette */
 :root {
   --shadow-navy: #0F1A2E;
   --sunrise-gold: #F6C98F;
   --soft-peach: #FAD7C4;
   --horizon-blue: #1A2A4F;
+
+  --color-bg:         248 243 234;
+  --color-surface:    237 228 211;
+  --color-text:       15 26 46;
+  --color-gold:       196 146 74;
+  --color-gold-hover: 176 122 53;
+
+  --zora-card-shadow:       0 6px 24px rgba(196, 146, 74, 0.15);
+  --zora-card-shadow-hover: 0 10px 36px rgba(196, 146, 74, 0.28);
+
+  --hero-gradient: linear-gradient(135deg, #F8F3EA 0%, #EDE4D3 50%, #F5ECD8 75%, #F0E6D0 100%);
+}
+
+/* Dark mode — current deep navy palette */
+.dark {
+  --color-bg:         15 26 46;
+  --color-surface:    26 42 79;
+  --color-text:       255 255 255;
+  --color-gold:       246 201 143;
+  --color-gold-hover: 250 215 196;
+
+  --zora-card-shadow:       0 6px 24px rgba(246, 201, 143, 0.12);
+  --zora-card-shadow-hover: 0 10px 36px rgba(246, 201, 143, 0.22);
+
+  --hero-gradient: linear-gradient(135deg, #0F1A2E 0%, #1A2A4F 50%, #2a3a60 75%, #1e2d4a 100%);
 }
 
 * {
@@ -20,10 +46,11 @@ html {
 }
 
 body {
-  background-color: #0F1A2E;
-  color: #FFFFFF;
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-text));
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 @layer utilities {
@@ -40,7 +67,7 @@ body {
   }
 
   .hero-gradient {
-    background: linear-gradient(135deg, #0F1A2E 0%, #1A2A4F 50%, #2a3a60 75%, #1e2d4a 100%);
+    background: var(--hero-gradient);
     background-size: 300% 300%;
     animation: gradientShift 10s ease infinite;
   }
@@ -50,12 +77,12 @@ body {
   }
 
   .zora-card {
-    box-shadow: 0 6px 24px rgba(246, 201, 143, 0.12);
+    box-shadow: var(--zora-card-shadow);
     transition: box-shadow 0.4s ease, border-color 0.4s ease, transform 0.25s ease;
   }
 
   .zora-card:hover {
-    box-shadow: 0 10px 36px rgba(246, 201, 143, 0.22);
+    box-shadow: var(--zora-card-shadow-hover);
   }
 
   .upcoming-card-bg {

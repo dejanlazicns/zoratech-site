@@ -32,7 +32,7 @@ export default function WaitlistForm({ appId }: { appId: string }) {
       <motion.p
         initial={{ opacity: 0, y: 6 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-sm text-[#F6C98F] text-center py-2"
+        className="text-sm text-zt-gold text-center py-2"
       >
         You&apos;re on the list! 🌅
       </motion.p>
@@ -44,7 +44,7 @@ export default function WaitlistForm({ appId }: { appId: string }) {
       <motion.p
         initial={{ opacity: 0, y: 6 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-sm text-white/40 text-center py-2"
+        className="text-sm text-zt-text/40 text-center py-2"
       >
         You&apos;re already on the list!
       </motion.p>
@@ -59,12 +59,12 @@ export default function WaitlistForm({ appId }: { appId: string }) {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your email"
         required
-        className="flex-1 min-w-0 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white placeholder-white/25 text-xs focus:outline-none focus:border-[#F6C98F]/40 transition-colors duration-300"
+        className="flex-1 min-w-0 px-4 py-2 rounded-full bg-white/5 border border-zt-text/10 text-zt-text placeholder-zt-text/25 text-xs focus:outline-none focus:border-zt-gold/40 transition-colors duration-300"
       />
       <button
         type="submit"
         disabled={status === "loading"}
-        className="px-4 py-2 bg-[#F6C98F] text-[#0F1A2E] text-xs font-semibold rounded-full hover:bg-[#FAD7C4] transition-colors duration-300 whitespace-nowrap disabled:opacity-60"
+        className="px-4 py-2 bg-zt-gold text-[#0F1A2E] text-xs font-semibold rounded-full hover:bg-zt-gold-hover transition-colors duration-300 whitespace-nowrap disabled:opacity-60"
       >
         {status === "loading" ? "..." : "Join Waitlist"}
       </button>

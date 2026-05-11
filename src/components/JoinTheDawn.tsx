@@ -26,11 +26,11 @@ export default function JoinTheDawn() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <p className="text-[#F6C98F] text-xs font-medium tracking-widest uppercase mb-6">Join the Dawn</p>
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white mb-4">
+          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-6">Join the Dawn</p>
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-zt-text mb-4">
             Be the first to experience new apps, updates, and ideas.
           </h2>
-          <p className="text-white/50 text-lg mb-12">
+          <p className="text-zt-text/50 text-lg mb-12">
             Welcome to the dawn of intelligent systems.
           </p>
 
@@ -38,10 +38,10 @@ export default function JoinTheDawn() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="py-6 px-8 rounded-2xl bg-[#F6C98F]/10 border border-[#F6C98F]/30"
+              className="py-6 px-8 rounded-2xl bg-zt-gold/10 border border-zt-gold/30"
             >
-              <p className="text-[#F6C98F] font-medium text-lg">You are in. Welcome to ZoraTech.</p>
-              <p className="text-white/50 text-sm mt-2">We will reach out when something new is ready.</p>
+              <p className="text-zt-gold font-medium text-lg">You are in. Welcome to ZoraTech.</p>
+              <p className="text-zt-text/50 text-sm mt-2">We will reach out when something new is ready.</p>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -51,13 +51,13 @@ export default function JoinTheDawn() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address"
                 required
-                className="flex-1 px-5 py-4 rounded-full bg-white/5 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#F6C98F]/50 transition-colors duration-300"
+                className="flex-1 px-5 py-4 rounded-full bg-white/5 border border-zt-text/10 text-zt-text placeholder-white/30 text-sm focus:outline-none focus:border-zt-gold/50 transition-colors duration-300"
               />
               <motion.button
                 type="submit"
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-7 py-4 bg-[#F6C98F] text-[#0F1A2E] font-semibold rounded-full text-sm tracking-wide hover:bg-[#FAD7C4] transition-colors duration-300 whitespace-nowrap"
+                className="px-7 py-4 bg-zt-gold text-[#0F1A2E] font-semibold rounded-full text-sm tracking-wide hover:bg-zt-gold-hover transition-colors duration-300 whitespace-nowrap"
               >
                 Join the Community
               </motion.button>

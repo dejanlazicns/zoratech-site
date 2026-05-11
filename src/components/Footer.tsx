@@ -13,17 +13,17 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F1A2E] border-t border-white/5 py-16 px-6">
+    <footer className="bg-zt-bg border-t border-zt-text/5 py-16 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-10 mb-12">
           <div className="flex flex-col items-center md:items-start gap-3">
             <div className="flex items-center gap-3">
               <Image src="/logo.png" alt="ZoraTech Logo" width={36} height={36} className="object-contain" />
-              <span className="font-playfair text-2xl font-bold text-[#F6C98F]">
+              <span className="font-playfair text-2xl font-bold text-zt-gold">
                 ZoraTech
               </span>
             </div>
-            <p className="text-white/40 text-sm max-w-xs text-center md:text-left">
+            <p className="text-zt-text/40 text-sm max-w-xs text-center md:text-left">
               Where warm technology meets human clarity.
             </p>
           </div>
@@ -33,7 +33,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-white/50 hover:text-[#F6C98F] transition-colors duration-300"
+                className="text-sm text-zt-text/50 hover:text-zt-gold transition-colors duration-300"
               >
                 {link.label}
               </Link>
@@ -41,18 +41,18 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/25 text-sm">
+        <div className="border-t border-zt-text/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-zt-text/25 text-sm">
             © 2026 ZoraTech. All rights reserved.
           </p>
           <nav className="flex flex-wrap justify-center gap-5">
-            <Link href="/privacy-policy" className="text-xs text-white/25 hover:text-[#F6C98F] transition-colors duration-300">
+            <Link href="/privacy-policy" className="text-xs text-zt-text/25 hover:text-zt-gold transition-colors duration-300">
               Privacy Policy
             </Link>
-            <Link href="/cookie-policy" className="text-xs text-white/25 hover:text-[#F6C98F] transition-colors duration-300">
+            <Link href="/cookie-policy" className="text-xs text-zt-text/25 hover:text-zt-gold transition-colors duration-300">
               Cookie Policy
             </Link>
-            <Link href="/terms" className="text-xs text-white/25 hover:text-[#F6C98F] transition-colors duration-300">
+            <Link href="/terms" className="text-xs text-zt-text/25 hover:text-zt-gold transition-colors duration-300">
               Terms of Service
             </Link>
           </nav>

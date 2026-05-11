@@ -58,17 +58,17 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#0F1A2E]">
+    <main className="min-h-screen bg-zt-bg">
       <Navbar />
 
       {/* Hero */}
       <section className="pt-40 pb-16 px-6 text-center">
         <motion.div {...fadeUp()}>
-          <p className="text-[#F6C98F] text-xs font-medium tracking-widest uppercase mb-4">Contact</p>
-          <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">Contact</p>
+          <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-zt-text mb-6 leading-tight">
             Let&apos;s build something<br className="hidden md:block" /> meaningful together.
           </h1>
-          <p className="text-white/50 text-lg max-w-xl mx-auto">
+          <p className="text-zt-text/50 text-lg max-w-xl mx-auto">
             For partnerships, media, or freelance collaboration — reach out.
           </p>
         </motion.div>
@@ -79,7 +79,7 @@ export default function ContactPage() {
         <div className="max-w-2xl mx-auto">
           <motion.div
             {...fadeUp(0.1)}
-            className="zora-card p-8 md:p-12 rounded-2xl bg-[#1A2A4F]/50 border border-white/5"
+            className="zora-card p-8 md:p-12 rounded-2xl bg-zt-surface/50 border border-zt-text/5"
           >
             {status === "success" ? (
               <motion.div
@@ -87,15 +87,15 @@ export default function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-center py-8"
               >
-                <p className="font-playfair text-white text-2xl mb-3">Message received!</p>
-                <p className="text-[#F6C98F] text-lg">We&apos;ll be in touch. 🌅</p>
+                <p className="font-playfair text-zt-text text-2xl mb-3">Message received!</p>
+                <p className="text-zt-gold text-lg">We&apos;ll be in touch. 🌅</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 {/* Name */}
                 <div>
-                  <label className="block text-white/40 text-xs tracking-widest uppercase mb-2">
-                    Name <span className="text-white/20">(optional)</span>
+                  <label className="block text-zt-text/40 text-xs tracking-widest uppercase mb-2">
+                    Name <span className="text-zt-text/20">(optional)</span>
                   </label>
                   <input
                     type="text"
@@ -103,13 +103,13 @@ export default function ContactPage() {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="Your name"
-                    className="w-full px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 text-sm focus:outline-none focus:border-[#F6C98F]/40 transition-colors duration-300"
+                    className="w-full px-5 py-3 rounded-xl bg-white/5 border border-zt-text/10 text-zt-text placeholder-zt-text/25 text-sm focus:outline-none focus:border-zt-gold/40 transition-colors duration-300"
                   />
                 </div>
 
                 {/* Email */}
                 <div>
-                  <label className="block text-white/40 text-xs tracking-widest uppercase mb-2">
+                  <label className="block text-zt-text/40 text-xs tracking-widest uppercase mb-2">
                     Email <span className="text-red-400/60">*</span>
                   </label>
                   <input
@@ -119,13 +119,13 @@ export default function ContactPage() {
                     onChange={handleChange}
                     placeholder="your@email.com"
                     required
-                    className="w-full px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 text-sm focus:outline-none focus:border-[#F6C98F]/40 transition-colors duration-300"
+                    className="w-full px-5 py-3 rounded-xl bg-white/5 border border-zt-text/10 text-zt-text placeholder-zt-text/25 text-sm focus:outline-none focus:border-zt-gold/40 transition-colors duration-300"
                   />
                 </div>
 
                 {/* Category */}
                 <div>
-                  <label className="block text-white/40 text-xs tracking-widest uppercase mb-2">
+                  <label className="block text-zt-text/40 text-xs tracking-widest uppercase mb-2">
                     Category <span className="text-red-400/60">*</span>
                   </label>
                   <select
@@ -133,7 +133,7 @@ export default function ContactPage() {
                     value={form.category}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-3 rounded-xl bg-[#0F1A2E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#F6C98F]/40 transition-colors duration-300 appearance-none cursor-pointer"
+                    className="w-full px-5 py-3 rounded-xl bg-zt-bg border border-zt-text/10 text-zt-text text-sm focus:outline-none focus:border-zt-gold/40 transition-colors duration-300 appearance-none cursor-pointer"
                   >
                     <option value="" disabled>Select a category</option>
                     {categories.map((c) => (
@@ -144,7 +144,7 @@ export default function ContactPage() {
 
                 {/* Message */}
                 <div>
-                  <label className="block text-white/40 text-xs tracking-widest uppercase mb-2">
+                  <label className="block text-zt-text/40 text-xs tracking-widest uppercase mb-2">
                     Message <span className="text-red-400/60">*</span>
                   </label>
                   <textarea
@@ -154,7 +154,7 @@ export default function ContactPage() {
                     placeholder="Tell us what you have in mind..."
                     required
                     rows={5}
-                    className="w-full px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 text-sm focus:outline-none focus:border-[#F6C98F]/40 transition-colors duration-300 resize-none"
+                    className="w-full px-5 py-3 rounded-xl bg-white/5 border border-zt-text/10 text-zt-text placeholder-zt-text/25 text-sm focus:outline-none focus:border-zt-gold/40 transition-colors duration-300 resize-none"
                   />
                 </div>
 
@@ -165,7 +165,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="mt-2 w-full py-4 bg-[#F6C98F] text-[#0F1A2E] font-semibold text-sm rounded-full hover:bg-[#FAD7C4] transition-all duration-300 disabled:opacity-60 tracking-wide"
+                  className="mt-2 w-full py-4 bg-zt-gold text-[#0F1A2E] font-semibold text-sm rounded-full hover:bg-zt-gold-hover transition-all duration-300 disabled:opacity-60 tracking-wide"
                 >
                   {status === "loading" ? "Sending..." : "Send Message"}
                 </button>
@@ -182,11 +182,11 @@ export default function ContactPage() {
             <motion.div
               key={item.title}
               {...fadeUp(i * 0.1)}
-              className="zora-card p-8 rounded-2xl bg-[#1A2A4F]/50 border border-white/5 hover:border-[#F6C98F]/20 text-center"
+              className="zora-card p-8 rounded-2xl bg-zt-surface/50 border border-zt-text/5 hover:border-zt-gold/20 text-center"
             >
               <span className="text-3xl block mb-4">{item.icon}</span>
-              <h3 className="font-playfair text-white font-semibold text-lg mb-2">{item.title}</h3>
-              <p className="text-white/50 text-sm leading-relaxed">{item.body}</p>
+              <h3 className="font-playfair text-zt-text font-semibold text-lg mb-2">{item.title}</h3>
+              <p className="text-zt-text/50 text-sm leading-relaxed">{item.body}</p>
             </motion.div>
           ))}
         </div>

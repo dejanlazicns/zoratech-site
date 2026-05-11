@@ -13,7 +13,7 @@ const categoryColors: Record<BlogCategory, string> = {
   "Dev Log": "text-blue-400 border-blue-400/40 bg-blue-400/10",
   "App Updates": "text-green-400 border-green-400/40 bg-green-400/10",
   "Philosophy": "text-purple-400 border-purple-400/40 bg-purple-400/10",
-  "Behind the Scenes": "text-[#F6C98F] border-[#F6C98F]/40 bg-[#F6C98F]/10",
+  "Behind the Scenes": "text-zt-gold border-zt-gold/40 bg-zt-gold/10",
 };
 
 function BlogCard({ post, index }: { post: typeof blogPosts[0]; index: number }) {
@@ -25,25 +25,25 @@ function BlogCard({ post, index }: { post: typeof blogPosts[0]; index: number })
       exit={{ opacity: 0, y: 12 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const, delay: index * 0.08 }}
       whileHover={{ y: -6 }}
-      className="zora-card flex flex-col p-8 rounded-2xl bg-[#1A2A4F]/50 border border-white/5 hover:border-[#F6C98F]/20 group"
+      className="zora-card flex flex-col p-8 rounded-2xl bg-zt-surface/50 border border-zt-text/5 hover:border-zt-gold/20 group"
     >
       <div className="flex items-center justify-between mb-6">
         <span className={`text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border ${categoryColors[post.category]}`}>
           {post.category}
         </span>
-        <span className="text-white/25 text-xs">{post.date}</span>
+        <span className="text-zt-text/25 text-xs">{post.date}</span>
       </div>
 
-      <h3 className="font-playfair text-white font-semibold text-xl mb-3 leading-snug group-hover:text-[#F6C98F] transition-colors duration-300">
+      <h3 className="font-playfair text-zt-text font-semibold text-xl mb-3 leading-snug group-hover:text-zt-gold transition-colors duration-300">
         {post.title}
       </h3>
-      <p className="text-white/50 text-sm leading-relaxed flex-1 mb-6">
+      <p className="text-zt-text/50 text-sm leading-relaxed flex-1 mb-6">
         {post.description}
       </p>
 
       <button
         type="button"
-        className="self-start px-5 py-2.5 border border-[#F6C98F]/40 text-[#F6C98F] text-sm font-medium rounded-full hover:border-[#F6C98F] hover:bg-[#F6C98F]/10 transition-all duration-300"
+        className="self-start px-5 py-2.5 border border-zt-gold/40 text-zt-gold text-sm font-medium rounded-full hover:border-zt-gold hover:bg-zt-gold/10 transition-all duration-300"
       >
         Read More →
       </button>
@@ -59,7 +59,7 @@ export default function BlogPage() {
     : blogPosts.filter((p) => p.category === active);
 
   return (
-    <main className="min-h-screen bg-[#0F1A2E]">
+    <main className="min-h-screen bg-zt-bg">
       <Navbar />
 
       {/* Hero */}
@@ -69,11 +69,11 @@ export default function BlogPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
         >
-          <p className="text-[#F6C98F] text-xs font-medium tracking-widest uppercase mb-4">Blog</p>
-          <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">Blog</p>
+          <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-zt-text mb-4">
             Behind the dawn.
           </h1>
-          <p className="text-white/50 text-lg">Updates, stories, and ideas from ZoraTech.</p>
+          <p className="text-zt-text/50 text-lg">Updates, stories, and ideas from ZoraTech.</p>
         </motion.div>
       </section>
 
@@ -92,8 +92,8 @@ export default function BlogPage() {
               onClick={() => setActive(cat)}
               className={`px-5 py-2 rounded-full text-xs font-medium tracking-widest uppercase transition-all duration-300 border ${
                 active === cat
-                  ? "bg-[#F6C98F] text-[#0F1A2E] border-[#F6C98F]"
-                  : "border-white/10 text-white/40 hover:border-[#F6C98F]/40 hover:text-[#F6C98F]"
+                  ? "bg-zt-gold text-[#0F1A2E] border-zt-gold"
+                  : "border-zt-text/10 text-zt-text/40 hover:border-zt-gold/40 hover:text-zt-gold"
               }`}
             >
               {cat}
@@ -121,7 +121,7 @@ export default function BlogPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="text-center text-white/25 text-sm py-20"
+                className="text-center text-zt-text/25 text-sm py-20"
               >
                 No posts in this category yet.
               </motion.p>

@@ -8,31 +8,31 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen bg-[#0F1A2E]">
+    <main className="min-h-screen bg-zt-bg">
       <Navbar />
 
       <section className="pt-40 pb-32 px-6">
         <div className="max-w-3xl mx-auto">
-          <p className="text-[#F6C98F] text-xs font-medium tracking-widest uppercase mb-4">Legal</p>
-          <h1 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-4">Terms of Service</h1>
-          <p className="text-white/30 text-sm mb-12">Last updated: May 9, 2026</p>
+          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">Legal</p>
+          <h1 className="font-playfair text-4xl md:text-5xl font-bold text-zt-text mb-4">Terms of Service</h1>
+          <p className="text-zt-text/30 text-sm mb-12">Last updated: May 9, 2026</p>
 
-          <div className="space-y-10 text-white/60 text-base leading-relaxed">
+          <div className="space-y-10 text-zt-text/60 text-base leading-relaxed">
 
             <div>
-              <h2 className="font-playfair text-white text-xl font-semibold mb-3">1. Acceptance of Terms</h2>
+              <h2 className="font-playfair text-zt-text text-xl font-semibold mb-3">1. Acceptance of Terms</h2>
               <p>By accessing or using zoratech.tech and any ZoraTech applications, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.</p>
             </div>
 
             <div>
-              <h2 className="font-playfair text-white text-xl font-semibold mb-3">2. Use of Services</h2>
+              <h2 className="font-playfair text-zt-text text-xl font-semibold mb-3">2. Use of Services</h2>
               <p>ZoraTech grants you a limited, non-exclusive, non-transferable right to access and use our website and applications for personal or professional purposes. You agree not to misuse, reverse-engineer, or attempt to disrupt our services.</p>
             </div>
 
             <div>
-              <h2 className="font-playfair text-white text-xl font-semibold mb-3">3. Beta Applications</h2>
+              <h2 className="font-playfair text-zt-text text-xl font-semibold mb-3">3. Beta Applications</h2>
               <p>Several ZoraTech applications are currently in beta or development phase. By using beta applications, you acknowledge that:</p>
-              <ul className="list-disc list-inside mt-3 space-y-2 text-white/50">
+              <ul className="list-disc list-inside mt-3 space-y-2 text-zt-text/50">
                 <li>Beta apps may contain bugs, errors, or incomplete features</li>
                 <li>Functionality may change without notice</li>
                 <li>ZoraTech is not liable for any loss, data corruption, or disruption caused by the use of beta-phase applications</li>
@@ -41,32 +41,32 @@ export default function TermsPage() {
             </div>
 
             <div>
-              <h2 className="font-playfair text-white text-xl font-semibold mb-3">4. Limitation of Liability</h2>
+              <h2 className="font-playfair text-zt-text text-xl font-semibold mb-3">4. Limitation of Liability</h2>
               <p>ZoraTech provides all services &quot;as is&quot; without warranties of any kind, express or implied. To the maximum extent permitted by law, ZoraTech shall not be liable for any indirect, incidental, or consequential damages arising from your use of our services.</p>
             </div>
 
             <div>
-              <h2 className="font-playfair text-white text-xl font-semibold mb-3">5. Intellectual Property & Copyright</h2>
+              <h2 className="font-playfair text-zt-text text-xl font-semibold mb-3">5. Intellectual Property & Copyright</h2>
               <p>All content on zoratech.tech — including but not limited to text, design, logos, illustrations, and source code — is the exclusive intellectual property of ZoraTech.</p>
               <p className="mt-3">© 2026 ZoraTech. All rights reserved.</p>
               <p className="mt-3">No part of this website or its content may be reproduced, distributed, transmitted, displayed, published, or used in any form or by any means — electronic, mechanical, or otherwise — without the prior explicit written permission of ZoraTech. Unauthorized use of any ZoraTech materials constitutes an infringement of intellectual property rights and may be subject to legal action.</p>
-              <p className="mt-3">To request permission for use of any ZoraTech content, contact us at: <Link href="/contact" className="text-[#F6C98F] hover:underline underline-offset-4">contact@zoratech.tech</Link></p>
+              <p className="mt-3">To request permission for use of any ZoraTech content, contact us at: <Link href="/contact" className="text-zt-gold hover:underline underline-offset-4">contact@zoratech.tech</Link></p>
             </div>
 
             <div>
-              <h2 className="font-playfair text-white text-xl font-semibold mb-3">6. Waitlist & Contact Forms</h2>
+              <h2 className="font-playfair text-zt-text text-xl font-semibold mb-3">6. Waitlist & Contact Forms</h2>
               <p>By submitting your email to a waitlist or contact form, you consent to being contacted by ZoraTech regarding the relevant application or inquiry. You may request removal at any time.</p>
             </div>
 
             <div>
-              <h2 className="font-playfair text-white text-xl font-semibold mb-3">7. Changes to Terms</h2>
+              <h2 className="font-playfair text-zt-text text-xl font-semibold mb-3">7. Changes to Terms</h2>
               <p>ZoraTech reserves the right to update these Terms at any time. Continued use of our services after changes constitutes acceptance of the updated Terms.</p>
             </div>
 
             <div>
-              <h2 className="font-playfair text-white text-xl font-semibold mb-3">8. Contact</h2>
+              <h2 className="font-playfair text-zt-text text-xl font-semibold mb-3">8. Contact</h2>
               <p>For questions regarding these Terms, contact us at:</p>
-              <Link href="/contact" className="mt-3 font-medium text-[#F6C98F] hover:underline underline-offset-4 block">contact@zoratech.tech</Link>
+              <Link href="/contact" className="mt-3 font-medium text-zt-gold hover:underline underline-offset-4 block">contact@zoratech.tech</Link>
             </div>
 
           </div>

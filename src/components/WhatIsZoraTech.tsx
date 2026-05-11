@@ -45,13 +45,13 @@ function PillarCard({ icon, title, description, index }: { icon: React.ReactNode
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.15 }}
       whileHover={{ y: -6, transition: { duration: 0.25 } }}
-      className="zora-card flex flex-col items-center text-center p-8 rounded-2xl bg-[#1A2A4F]/50 border border-white/5 hover:border-[#F6C98F]/20"
+      className="zora-card flex flex-col items-center text-center p-8 rounded-2xl bg-zt-surface/50 border border-zt-text/5 hover:border-zt-gold/20"
     >
-      <div className="text-[#F6C98F] mb-5">{icon}</div>
-      <h3 className="text-white font-semibold text-lg mb-3 [font-family:'Playfair_Display',serif]">
+      <div className="text-zt-gold mb-5">{icon}</div>
+      <h3 className="text-zt-text font-semibold text-lg mb-3 [font-family:'Playfair_Display',serif]">
         {title}
       </h3>
-      <p className="text-white/50 text-sm leading-relaxed">{description}</p>
+      <p className="text-zt-text/50 text-sm leading-relaxed">{description}</p>
     </motion.div>
   );
 }
@@ -70,10 +70,10 @@ export default function WhatIsZoraTech() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-center mb-20"
         >
-          <p className="text-[#F6C98F] text-xs font-medium tracking-widest uppercase mb-4">What is ZoraTech</p>
-          <p className="text-2xl md:text-3xl text-white/80 max-w-3xl mx-auto leading-relaxed [font-family:'Playfair_Display',serif]">
+          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">What is ZoraTech</p>
+          <p className="text-2xl md:text-3xl text-zt-text/80 max-w-3xl mx-auto leading-relaxed [font-family:'Playfair_Display',serif]">
             Technology should feel like light, not noise. ZoraTech creates digital systems that bring{" "}
-            <span className="text-[#F6C98F]">clarity, warmth and intelligence</span> into everyday life.
+            <span className="text-zt-gold">clarity, warmth and intelligence</span> into everyday life.
           </p>
         </motion.div>
 

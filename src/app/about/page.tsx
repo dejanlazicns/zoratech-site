@@ -31,42 +31,42 @@ const principles = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#0F1A2E]">
+    <main className="min-h-screen bg-zt-bg">
       <Navbar />
 
       {/* Hero */}
       <section className="pt-40 pb-20 px-6 text-center">
         <motion.div {...fadeUp()}>
-          <p className="text-[#F6C98F] text-xs font-medium tracking-widest uppercase mb-4">About</p>
-          <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">About</p>
+          <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-zt-text mb-6 leading-tight">
             We build technology<br className="hidden md:block" /> that feels like sunrise.
           </h1>
-          <p className="text-white/50 text-lg tracking-wide">Warm. Calm. Intelligent.</p>
+          <p className="text-zt-text/50 text-lg tracking-wide">Warm. Calm. Intelligent.</p>
         </motion.div>
       </section>
 
       {/* Divider */}
-      <div className="max-w-xs mx-auto border-t border-[#F6C98F]/10 mb-20" />
+      <div className="max-w-xs mx-auto border-t border-zt-gold/10 mb-20" />
 
       {/* Founder Story */}
       <section className="px-6 pb-24">
         <div className="max-w-3xl mx-auto">
           <motion.p
             {...fadeUp(0.05)}
-            className="text-[#F6C98F] text-xs font-medium tracking-widest uppercase mb-6"
+            className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-6"
           >
             Founding Story
           </motion.p>
           <motion.blockquote {...fadeUp(0.1)} className="relative">
-            <span className="absolute -top-6 -left-4 text-[#F6C98F]/10 font-playfair text-8xl leading-none select-none">&ldquo;</span>
-            <p className="font-playfair text-white/80 text-xl md:text-2xl leading-relaxed relative z-10">
+            <span className="absolute -top-6 -left-4 text-zt-gold/10 font-playfair text-8xl leading-none select-none">&ldquo;</span>
+            <p className="font-playfair text-zt-text/80 text-xl md:text-2xl leading-relaxed relative z-10">
               My name is Dejan. I&apos;m 55 years old. By trade, I&apos;m a car mechanic. A man who spent his entire life working with his hands, in grease, in noise, in the real world.
             </p>
-            <p className="font-playfair text-white/80 text-xl md:text-2xl leading-relaxed mt-6 relative z-10">
+            <p className="font-playfair text-zt-text/80 text-xl md:text-2xl leading-relaxed mt-6 relative z-10">
               And that&apos;s exactly why I understood something many never do: Technology is not about machines. Technology is about people.
             </p>
           </motion.blockquote>
-          <motion.p {...fadeUp(0.2)} className="mt-8 text-white/35 text-sm tracking-wide">
+          <motion.p {...fadeUp(0.2)} className="mt-8 text-zt-text/35 text-sm tracking-wide">
             — Dejan Lazić, Founder
           </motion.p>
         </div>
@@ -77,20 +77,20 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <motion.div
             {...fadeUp(0.05)}
-            className="zora-card p-8 rounded-2xl bg-[#1A2A4F]/50 border border-white/5"
+            className="zora-card p-8 rounded-2xl bg-zt-surface/50 border border-zt-text/5"
           >
-            <p className="text-[#F6C98F] text-xs font-medium tracking-widest uppercase mb-4">Mission</p>
-            <p className="font-playfair text-white text-xl md:text-2xl leading-relaxed">
+            <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">Mission</p>
+            <p className="font-playfair text-zt-text text-xl md:text-2xl leading-relaxed">
               To create digital systems that bring clarity and harmony into everyday life.
             </p>
           </motion.div>
 
           <motion.div
             {...fadeUp(0.12)}
-            className="zora-card p-8 rounded-2xl bg-[#1A2A4F]/50 border border-white/5"
+            className="zora-card p-8 rounded-2xl bg-zt-surface/50 border border-zt-text/5"
           >
-            <p className="text-[#F6C98F] text-xs font-medium tracking-widest uppercase mb-4">Vision</p>
-            <p className="font-playfair text-white text-xl md:text-2xl leading-relaxed">
+            <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">Vision</p>
+            <p className="font-playfair text-zt-text text-xl md:text-2xl leading-relaxed">
               A world where technology supports humans — not the other way around.
             </p>
           </motion.div>
@@ -102,7 +102,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto">
           <motion.p
             {...fadeUp()}
-            className="text-[#F6C98F] text-xs font-medium tracking-widest uppercase mb-10 text-center"
+            className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-10 text-center"
           >
             Our Principles
           </motion.p>
@@ -112,11 +112,11 @@ export default function AboutPage() {
                 key={p.title}
                 {...fadeUp(i * 0.1)}
                 whileHover={{ y: -6 }}
-                className="zora-card flex flex-col p-8 rounded-2xl bg-[#1A2A4F]/50 border border-white/5 hover:border-[#F6C98F]/20"
+                className="zora-card flex flex-col p-8 rounded-2xl bg-zt-surface/50 border border-zt-text/5 hover:border-zt-gold/20"
               >
                 <span className="text-3xl mb-5">{p.icon}</span>
-                <h3 className="font-playfair text-white font-semibold text-lg mb-3">{p.title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{p.body}</p>
+                <h3 className="font-playfair text-zt-text font-semibold text-lg mb-3">{p.title}</h3>
+                <p className="text-zt-text/50 text-sm leading-relaxed">{p.body}</p>
               </motion.div>
             ))}
           </div>
@@ -127,19 +127,19 @@ export default function AboutPage() {
       <section className="px-6 pb-32">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div {...fadeUp()}>
-            <p className="text-[#F6C98F] text-xs font-medium tracking-widest uppercase mb-8">The ZoraTech Manifest</p>
-            <div className="zora-card p-10 md:p-14 rounded-2xl bg-[#1A2A4F]/50 border border-white/5">
-              <p className="font-playfair text-white/80 text-lg md:text-xl leading-loose">
+            <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-8">The ZoraTech Manifest</p>
+            <div className="zora-card p-10 md:p-14 rounded-2xl bg-zt-surface/50 border border-zt-text/5">
+              <p className="font-playfair text-zt-text/80 text-lg md:text-xl leading-loose">
                 We believe that every person — regardless of age, background, or expertise — deserves technology that respects them.
               </p>
-              <p className="font-playfair text-white/60 text-base md:text-lg leading-loose mt-6">
+              <p className="font-playfair text-zt-text/60 text-base md:text-lg leading-loose mt-6">
                 Not technology that overwhelms. Not technology that manipulates. Not technology that replaces the human touch.
               </p>
-              <p className="font-playfair text-white text-lg md:text-xl leading-loose mt-6">
+              <p className="font-playfair text-zt-text text-lg md:text-xl leading-loose mt-6">
                 Technology like sunrise — quiet, inevitable, and full of possibility.
               </p>
-              <div className="mt-10 pt-8 border-t border-white/5">
-                <p className="text-[#F6C98F] font-playfair italic text-sm tracking-wide">
+              <div className="mt-10 pt-8 border-t border-zt-text/5">
+                <p className="text-zt-gold font-playfair italic text-sm tracking-wide">
                   &ldquo;Zora&rdquo; — the Serbian word for dawn.
                 </p>
               </div>
