@@ -59,7 +59,7 @@ export default function WaitlistForm({ appId }: { appId: string }) {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your email"
         required
-        className="flex-1 min-w-0 px-4 py-2 rounded-full bg-white/5 border border-zt-text/10 text-zt-text placeholder-zt-text/25 text-xs focus:outline-none focus:border-zt-gold/40 transition-colors duration-300"
+        className="flex-1 min-w-0 px-4 py-2 rounded-full bg-zt-bg border border-zt-text/20 text-zt-text placeholder-zt-text/25 text-xs focus:outline-none focus:border-zt-gold/40 transition-colors duration-300"
       />
       <button
         type="submit"

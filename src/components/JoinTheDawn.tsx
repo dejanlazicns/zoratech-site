@@ -51,7 +51,7 @@ export default function JoinTheDawn() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address"
                 required
-                className="flex-1 px-5 py-4 rounded-full bg-white/5 border border-zt-text/10 text-zt-text placeholder-white/30 text-sm focus:outline-none focus:border-zt-gold/50 transition-colors duration-300"
+                className="flex-1 px-5 py-4 rounded-full bg-zt-bg border border-zt-text/20 text-zt-text placeholder-zt-text/40 text-sm focus:outline-none focus:border-zt-gold/50 transition-colors duration-300"
               />
               <motion.button
                 type="submit"

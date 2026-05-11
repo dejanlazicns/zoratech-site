@@ -103,7 +103,7 @@ export default function ContactPage() {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="Your name"
-                    className="w-full px-5 py-3 rounded-xl bg-white/5 border border-zt-text/10 text-zt-text placeholder-zt-text/25 text-sm focus:outline-none focus:border-zt-gold/40 transition-colors duration-300"
+                    className="w-full px-5 py-3 rounded-xl bg-zt-bg border border-zt-text/20 text-zt-text placeholder-zt-text/25 text-sm focus:outline-none focus:border-zt-gold/40 transition-colors duration-300"
                   />
                 </div>
 
@@ -119,7 +119,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     placeholder="your@email.com"
                     required
-                    className="w-full px-5 py-3 rounded-xl bg-white/5 border border-zt-text/10 text-zt-text placeholder-zt-text/25 text-sm focus:outline-none focus:border-zt-gold/40 transition-colors duration-300"
+                    className="w-full px-5 py-3 rounded-xl bg-zt-bg border border-zt-text/20 text-zt-text placeholder-zt-text/25 text-sm focus:outline-none focus:border-zt-gold/40 transition-colors duration-300"
                   />
                 </div>
 
@@ -154,7 +154,7 @@ export default function ContactPage() {
                     placeholder="Tell us what you have in mind..."
                     required
                     rows={5}
-                    className="w-full px-5 py-3 rounded-xl bg-white/5 border border-zt-text/10 text-zt-text placeholder-zt-text/25 text-sm focus:outline-none focus:border-zt-gold/40 transition-colors duration-300 resize-none"
+                    className="w-full px-5 py-3 rounded-xl bg-zt-bg border border-zt-text/20 text-zt-text placeholder-zt-text/25 text-sm focus:outline-none focus:border-zt-gold/40 transition-colors duration-300 resize-none"
                   />
                 </div>
 
