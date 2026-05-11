@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function WaitlistForm({ appId }: { appId: string }) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "duplicate" | "error">("idle");
+  const t = useTranslations("waitlist");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,7 +36,7 @@ export default function WaitlistForm({ appId }: { appId: string }) {
         animate={{ opacity: 1, y: 0 }}
         className="text-sm text-zt-gold text-center py-2"
       >
-        You&apos;re on the list! 🌅
+        {t("success")}
       </motion.p>
     );
   }
@@ -46,7 +48,7 @@ export default function WaitlistForm({ appId }: { appId: string }) {
         animate={{ opacity: 1, y: 0 }}
         className="text-sm text-zt-text/40 text-center py-2"
       >
-        You&apos;re already on the list!
+        {t("duplicate")}
       </motion.p>
     );
   }
@@ -57,7 +59,7 @@ export default function WaitlistForm({ appId }: { appId: string }) {
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter your email"
+        placeholder={t("placeholder")}
         required
         className="flex-1 min-w-0 px-4 py-2 rounded-full bg-zt-bg border border-zt-text/20 text-zt-text placeholder-zt-text/25 text-xs focus:outline-none focus:border-zt-gold/40 transition-colors duration-300"
       />
@@ -66,7 +68,7 @@ export default function WaitlistForm({ appId }: { appId: string }) {
         disabled={status === "loading"}
         className="px-4 py-2 bg-zt-gold text-[#0F1A2E] text-xs font-semibold rounded-full hover:bg-zt-gold-hover transition-colors duration-300 whitespace-nowrap disabled:opacity-60"
       >
-        {status === "loading" ? "..." : "Join Waitlist"}
+        {status === "loading" ? t("loading") : t("join")}
       </button>
     </form>
   );

@@ -1,0 +1,195 @@
+{
+  "nav": {
+    "home": "Home",
+    "apps": "Apps",
+    "upcoming": "Upcoming",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "tagline": "Where warm technology meets human clarity"
+  },
+  "footer": {
+    "tagline": "Where warm technology meets human clarity.",
+    "copyright": "© 2026 ZoraTech. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "terms": "Terms of Service"
+  },
+  "cookie": {
+    "message": "We use only essential cookies.",
+    "learnMore": "Learn more",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+  "home": {
+    "hero": {
+      "h1": "Where warm technology meets human clarity.",
+      "sub": "We build intelligent systems that feel like sunrise — calm, powerful, and human.",
+      "cta1": "Explore Apps",
+      "cta2": "Upcoming Projects",
+      "scroll": "Scroll"
+    },
+    "featured": {
+      "label": "Featured Apps",
+      "h2a": "Tools that make life simpler.",
+      "h2b": "Intelligent. Warm. Useful.",
+      "learnMore": "Learn More →"
+    },
+    "upcoming": {
+      "label": "Upcoming",
+      "h2": "The future is already forming.",
+      "sub": "Join the waitlists and shape what comes next.",
+      "viewAll": "View All Upcoming Apps",
+      "cards": [
+        {
+          "tag": "In Development",
+          "name": "Coming Soon",
+          "desc": "Something new is forming. Be the first to know when it arrives."
+        },
+        {
+          "tag": "Early Access",
+          "name": "Coming Soon",
+          "desc": "A new tool built for clarity and calm. Join the waitlist."
+        },
+        {
+          "tag": "Planning",
+          "name": "Coming Soon",
+          "desc": "We are shaping the idea. Your input can influence what this becomes."
+        }
+      ]
+    },
+    "what": {
+      "label": "What is ZoraTech",
+      "desc": "Technology should feel like light, not noise. ZoraTech creates digital systems that bring",
+      "descHighlight": "clarity, warmth and intelligence",
+      "descEnd": "into everyday life.",
+      "pillars": [
+        {
+          "title": "Human-Centered Intelligence",
+          "desc": "Every system we build starts with the human in mind. Technology that adapts to you, not the other way around."
+        },
+        {
+          "title": "Warm & Calm Technology",
+          "desc": "No noise. No overwhelm. Just clarity. We design with warmth so technology feels like a trusted companion."
+        },
+        {
+          "title": "Systems That Bring Order",
+          "desc": "We create intelligent infrastructure that organizes complexity, giving you room to think, create, and live."
+        }
+      ]
+    },
+    "why": {
+      "label": "Why We Build",
+      "quote1": "We believe technology should",
+      "quote2": "elevate, not overwhelm.",
+      "quote3": "It should feel like sunrise — a moment of",
+      "quote4": "clarity, hope, and direction."
+    },
+    "join": {
+      "label": "Join the Dawn",
+      "h2": "Be the first to experience new apps, updates, and ideas.",
+      "sub": "Welcome to the dawn of intelligent systems.",
+      "placeholder": "Your email address",
+      "cta": "Join the Community",
+      "success": "You are in. Welcome to ZoraTech.",
+      "successSub": "We will reach out when something new is ready."
+    }
+  },
+  "apps": {
+    "label": "Apps",
+    "h1": "Every app we build solves a real problem.",
+    "sub": "Simple. Clear. Human.",
+    "live": "Live",
+    "learnMore": "Learn More",
+    "openApp": "Open App"
+  },
+  "appDetail": {
+    "back": "← Back to Apps",
+    "openApp": "Open App",
+    "comingSoon": "Coming Soon",
+    "viewAll": "View All Apps"
+  },
+  "upcoming": {
+    "label": "Upcoming",
+    "h1": "The future is already forming.",
+    "sub": "Help shape the future of ZoraTech. Join waitlists, vote for features, and influence development.",
+    "learnMore": "Learn More →"
+  },
+  "waitlist": {
+    "join": "Join Waitlist",
+    "loading": "...",
+    "placeholder": "Enter your email",
+    "success": "You're on the list! 🌅",
+    "duplicate": "You're already on the list!"
+  },
+  "about": {
+    "label": "About",
+    "h1a": "We build technology",
+    "h1b": "that feels like sunrise.",
+    "sub": "Warm. Calm. Intelligent.",
+    "storyLabel": "Founding Story",
+    "story1": "My name is Dejan. I'm 55 years old. By trade, I'm a car mechanic. A man who spent his entire life working with his hands, in grease, in noise, in the real world.",
+    "story2": "And that's exactly why I understood something many never do: Technology is not about machines. Technology is about people.",
+    "founder": "— Dejan Lazić, Founder",
+    "missionLabel": "Mission",
+    "mission": "To create digital systems that bring clarity and harmony into everyday life.",
+    "visionLabel": "Vision",
+    "vision": "A world where technology supports humans — not the other way around.",
+    "principlesLabel": "Our Principles",
+    "principles": [
+      {
+        "icon": "🤝",
+        "title": "Human-Centered Intelligence",
+        "body": "Every decision starts with a single question: how does this feel to the person using it? Technology must earn its place in a human life."
+      },
+      {
+        "icon": "🌅",
+        "title": "Warm & Calm Technology",
+        "body": "We reject noise, clutter, and urgency. Our products are designed to slow you down — in the best possible way."
+      },
+      {
+        "icon": "🧭",
+        "title": "Systems That Bring Order",
+        "body": "Complexity is the enemy of clarity. We build systems that quietly handle the hard parts so you never have to."
+      }
+    ],
+    "manifestLabel": "The ZoraTech Manifest",
+    "manifest1": "We believe that every person — regardless of age, background, or expertise — deserves technology that respects them.",
+    "manifest2": "Not technology that overwhelms. Not technology that manipulates. Not technology that replaces the human touch.",
+    "manifest3": "Technology like sunrise — quiet, inevitable, and full of possibility.",
+    "manifestQuote": "\"Zora\" — the Serbian word for dawn."
+  },
+  "blog": {
+    "label": "Blog",
+    "h1": "Behind the dawn.",
+    "sub": "Updates, stories, and ideas from ZoraTech.",
+    "readMore": "Read More →",
+    "empty": "No posts in this category yet.",
+    "categories": ["All", "Dev Log", "App Updates", "Philosophy", "Behind the Scenes"]
+  },
+  "contact": {
+    "label": "Contact",
+    "h1a": "Let's build something",
+    "h1b": "meaningful together.",
+    "sub": "For partnerships, media, or freelance collaboration — reach out.",
+    "namePlaceholder": "Your name",
+    "nameLabel": "Name",
+    "nameOptional": "(optional)",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your@email.com",
+    "categoryLabel": "Category",
+    "categoryPlaceholder": "Select a category",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us what you have in mind...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "successTitle": "Message received!",
+    "successSub": "We'll be in touch. 🌅",
+    "error": "Something went wrong. Please try again.",
+    "types": [
+      { "icon": "🤝", "title": "Partnerships", "body": "Looking to collaborate or integrate?" },
+      { "icon": "💼", "title": "Freelance", "body": "Designer, marketer, or video creator?" },
+      { "icon": "📰", "title": "Media", "body": "Writing about ZoraTech?" }
+    ]
+  }
+}

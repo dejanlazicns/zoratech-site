@@ -4,24 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
-
-const upcoming = [
-  {
-    name: "Coming Soon",
-    tag: "In Development",
-    description: "Something new is forming. Be the first to know when it arrives.",
-  },
-  {
-    name: "Coming Soon",
-    tag: "Early Access",
-    description: "A new tool built for clarity and calm. Join the waitlist.",
-  },
-  {
-    name: "Coming Soon",
-    tag: "Planning",
-    description: "We are shaping the idea. Your input can influence what this becomes.",
-  },
-];
+import { useTranslations } from "next-intl";
 
 function UpcomingCard({ name, tag, description, index }: { name: string; tag: string; description: string; index: number }) {
   const ref = useRef(null);
@@ -40,9 +23,7 @@ function UpcomingCard({ name, tag, description, index }: { name: string; tag: st
       <span className="inline-block text-xs font-medium text-zt-gold tracking-widest uppercase mb-4 px-3 py-1 rounded-full border border-zt-gold/30 w-fit">
         {tag}
       </span>
-      <h3 className="font-playfair text-zt-text font-semibold text-xl mb-3">
-        {name}
-      </h3>
+      <h3 className="font-playfair text-zt-text font-semibold text-xl mb-3">{name}</h3>
       <p className="text-zt-text/50 text-sm leading-relaxed flex-1">{description}</p>
     </motion.div>
   );
@@ -51,6 +32,13 @@ function UpcomingCard({ name, tag, description, index }: { name: string; tag: st
 export default function UpcomingApps() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const t = useTranslations("home.upcoming");
+
+  const cards = [0, 1, 2].map((i) => ({
+    tag: t(`cards.${i}.tag`),
+    name: t(`cards.${i}.name`),
+    desc: t(`cards.${i}.desc`),
+  }));
 
   return (
     <section className="upcoming-section-bg py-32 px-6">
@@ -62,18 +50,14 @@ export default function UpcomingApps() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">Upcoming</p>
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-zt-text mb-4">
-            The future is already forming.
-          </h2>
-          <p className="text-zt-text/50 text-lg">
-            Join the waitlists and shape what comes next.
-          </p>
+          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">{t("label")}</p>
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-zt-text mb-4">{t("h2")}</h2>
+          <p className="text-zt-text/50 text-lg">{t("sub")}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {upcoming.map((item, i) => (
-            <UpcomingCard key={i} {...item} index={i} />
+          {cards.map((item, i) => (
+            <UpcomingCard key={i} name={item.name} tag={item.tag} description={item.desc} index={i} />
           ))}
         </div>
 
@@ -89,7 +73,7 @@ export default function UpcomingApps() {
               whileTap={{ scale: 0.98 }}
               className="px-8 py-4 border border-zt-gold/40 text-zt-gold font-semibold rounded-full text-sm tracking-wide hover:border-zt-gold hover:bg-zt-gold/10 transition-all duration-300"
             >
-              View All Upcoming Apps
+              {t("viewAll")}
             </motion.button>
           </Link>
         </motion.div>

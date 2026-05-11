@@ -3,9 +3,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
+  const t = useTranslations("cookie");
 
   useEffect(() => {
     const consent = localStorage.getItem("cookie_consent");
@@ -34,25 +36,25 @@ export default function CookieBanner() {
         >
           <div className="flex flex-col gap-4 px-6 py-5 rounded-2xl bg-zt-surface border border-zt-text/10 shadow-xl shadow-black/20">
             <p className="text-zt-text/60 text-sm text-center leading-relaxed">
-              We use only essential cookies.{" "}
+              {t("message")}{" "}
               <Link href="/cookie-policy" className="text-zt-gold hover:underline underline-offset-4">
-                Learn more
+                {t("learnMore")}
               </Link>
             </p>
             <div className="flex gap-3">
               <button
                 type="button"
                 onClick={handleDecline}
-                className="flex-1 py-2.5 rounded-full border border-zt-text/10 text-zt-text/40 text-xs font-medium hover:border-white/30 hover:text-zt-text/60 transition-all duration-300"
+                className="flex-1 py-2.5 rounded-full border border-zt-text/10 text-zt-text/40 text-xs font-medium hover:border-zt-text/30 hover:text-zt-text/60 transition-all duration-300"
               >
-                Decline
+                {t("decline")}
               </button>
               <button
                 type="button"
                 onClick={handleAccept}
                 className="flex-1 py-2.5 rounded-full bg-zt-gold text-[#0F1A2E] text-xs font-semibold hover:bg-zt-gold-hover transition-all duration-300"
               >
-                Accept
+                {t("accept")}
               </button>
             </div>
           </div>

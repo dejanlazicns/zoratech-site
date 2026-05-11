@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useTranslations } from "next-intl";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
@@ -11,25 +12,10 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const, delay },
 });
 
-const principles = [
-  {
-    icon: "🤝",
-    title: "Human-Centered Intelligence",
-    body: "Every decision starts with a single question: how does this feel to the person using it? Technology must earn its place in a human life.",
-  },
-  {
-    icon: "🌅",
-    title: "Warm & Calm Technology",
-    body: "We reject noise, clutter, and urgency. Our products are designed to slow you down — in the best possible way.",
-  },
-  {
-    icon: "🧭",
-    title: "Systems That Bring Order",
-    body: "Complexity is the enemy of clarity. We build systems that quietly handle the hard parts so you never have to.",
-  },
-];
-
 export default function AboutPage() {
+  const t = useTranslations("about");
+  const principles = t.raw("principles") as Array<{ icon: string; title: string; body: string }>;
+
   return (
     <main className="min-h-screen bg-zt-bg">
       <Navbar />
@@ -37,11 +23,11 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="pt-40 pb-20 px-6 text-center">
         <motion.div {...fadeUp()}>
-          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">About</p>
+          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">{t("label")}</p>
           <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-zt-text mb-6 leading-tight">
-            We build technology<br className="hidden md:block" /> that feels like sunrise.
+            {t("h1a")}<br className="hidden md:block" /> {t("h1b")}
           </h1>
-          <p className="text-zt-text/50 text-lg tracking-wide">Warm. Calm. Intelligent.</p>
+          <p className="text-zt-text/50 text-lg tracking-wide">{t("sub")}</p>
         </motion.div>
       </section>
 
@@ -55,19 +41,19 @@ export default function AboutPage() {
             {...fadeUp(0.05)}
             className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-6"
           >
-            Founding Story
+            {t("storyLabel")}
           </motion.p>
           <motion.blockquote {...fadeUp(0.1)} className="relative">
             <span className="absolute -top-6 -left-4 text-zt-gold/10 font-playfair text-8xl leading-none select-none">&ldquo;</span>
             <p className="font-playfair text-zt-text/80 text-xl md:text-2xl leading-relaxed relative z-10">
-              My name is Dejan. I&apos;m 55 years old. By trade, I&apos;m a car mechanic. A man who spent his entire life working with his hands, in grease, in noise, in the real world.
+              {t("story1")}
             </p>
             <p className="font-playfair text-zt-text/80 text-xl md:text-2xl leading-relaxed mt-6 relative z-10">
-              And that&apos;s exactly why I understood something many never do: Technology is not about machines. Technology is about people.
+              {t("story2")}
             </p>
           </motion.blockquote>
           <motion.p {...fadeUp(0.2)} className="mt-8 text-zt-text/35 text-sm tracking-wide">
-            — Dejan Lazić, Founder
+            {t("founder")}
           </motion.p>
         </div>
       </section>
@@ -79,9 +65,9 @@ export default function AboutPage() {
             {...fadeUp(0.05)}
             className="zora-card p-8 rounded-2xl bg-zt-surface/50 border border-zt-text/5"
           >
-            <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">Mission</p>
+            <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">{t("missionLabel")}</p>
             <p className="font-playfair text-zt-text text-xl md:text-2xl leading-relaxed">
-              To create digital systems that bring clarity and harmony into everyday life.
+              {t("mission")}
             </p>
           </motion.div>
 
@@ -89,9 +75,9 @@ export default function AboutPage() {
             {...fadeUp(0.12)}
             className="zora-card p-8 rounded-2xl bg-zt-surface/50 border border-zt-text/5"
           >
-            <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">Vision</p>
+            <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">{t("visionLabel")}</p>
             <p className="font-playfair text-zt-text text-xl md:text-2xl leading-relaxed">
-              A world where technology supports humans — not the other way around.
+              {t("vision")}
             </p>
           </motion.div>
         </div>
@@ -104,7 +90,7 @@ export default function AboutPage() {
             {...fadeUp()}
             className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-10 text-center"
           >
-            Our Principles
+            {t("principlesLabel")}
           </motion.p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {principles.map((p, i) => (
@@ -127,20 +113,20 @@ export default function AboutPage() {
       <section className="px-6 pb-32">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div {...fadeUp()}>
-            <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-8">The ZoraTech Manifest</p>
+            <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-8">{t("manifestLabel")}</p>
             <div className="zora-card p-10 md:p-14 rounded-2xl bg-zt-surface/50 border border-zt-text/5">
               <p className="font-playfair text-zt-text/80 text-lg md:text-xl leading-loose">
-                We believe that every person — regardless of age, background, or expertise — deserves technology that respects them.
+                {t("manifest1")}
               </p>
               <p className="font-playfair text-zt-text/60 text-base md:text-lg leading-loose mt-6">
-                Not technology that overwhelms. Not technology that manipulates. Not technology that replaces the human touch.
+                {t("manifest2")}
               </p>
               <p className="font-playfair text-zt-text text-lg md:text-xl leading-loose mt-6">
-                Technology like sunrise — quiet, inevitable, and full of possibility.
+                {t("manifest3")}
               </p>
               <div className="mt-10 pt-8 border-t border-zt-text/5">
                 <p className="text-zt-gold font-playfair italic text-sm tracking-wide">
-                  &ldquo;Zora&rdquo; — the Serbian word for dawn.
+                  {t("manifestQuote")}
                 </p>
               </div>
             </div>

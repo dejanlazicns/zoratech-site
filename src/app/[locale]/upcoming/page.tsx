@@ -5,9 +5,13 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WaitlistForm from "@/components/WaitlistForm";
+import { useTranslations } from "next-intl";
 import { upcomingApps } from "@/lib/apps-data";
 
 function UpcomingCard({ app, index }: { app: typeof upcomingApps[0]; index: number }) {
+  const t = useTranslations("upcoming");
+  const tDetail = useTranslations("appDetail");
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -19,7 +23,7 @@ function UpcomingCard({ app, index }: { app: typeof upcomingApps[0]; index: numb
       <div className="flex items-start justify-between mb-6">
         <span className="text-4xl">{app.icon}</span>
         <span className="text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-zt-gold/40 text-zt-gold bg-zt-gold/10">
-          Coming Soon
+          {tDetail("comingSoon")}
         </span>
       </div>
 
@@ -28,7 +32,7 @@ function UpcomingCard({ app, index }: { app: typeof upcomingApps[0]; index: numb
 
       <Link href={`/apps/${app.id}`} className="mb-4">
         <span className="text-zt-gold text-xs font-medium hover:underline underline-offset-4 transition-all duration-200">
-          Learn More →
+          {t("learnMore")}
         </span>
       </Link>
 
@@ -40,6 +44,8 @@ function UpcomingCard({ app, index }: { app: typeof upcomingApps[0]; index: numb
 }
 
 export default function UpcomingPage() {
+  const t = useTranslations("upcoming");
+
   return (
     <main className="min-h-screen bg-zt-bg">
       <Navbar />
@@ -51,12 +57,12 @@ export default function UpcomingPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">Upcoming</p>
+          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">{t("label")}</p>
           <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-zt-text mb-6">
-            The future is already forming.
+            {t("h1")}
           </h1>
           <p className="text-zt-text/50 text-lg max-w-2xl mx-auto leading-relaxed">
-            Help shape the future of ZoraTech. Join waitlists, vote for features, and influence development.
+            {t("sub")}
           </p>
         </motion.div>
       </section>

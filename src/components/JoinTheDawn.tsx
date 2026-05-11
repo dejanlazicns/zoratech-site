@@ -3,12 +3,14 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function JoinTheDawn() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const t = useTranslations("home.join");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,13 +28,9 @@ export default function JoinTheDawn() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-6">Join the Dawn</p>
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-zt-text mb-4">
-            Be the first to experience new apps, updates, and ideas.
-          </h2>
-          <p className="text-zt-text/50 text-lg mb-12">
-            Welcome to the dawn of intelligent systems.
-          </p>
+          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-6">{t("label")}</p>
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-zt-text mb-4">{t("h2")}</h2>
+          <p className="text-zt-text/50 text-lg mb-12">{t("sub")}</p>
 
           {submitted ? (
             <motion.div
@@ -40,8 +38,8 @@ export default function JoinTheDawn() {
               animate={{ opacity: 1, scale: 1 }}
               className="py-6 px-8 rounded-2xl bg-zt-gold/10 border border-zt-gold/30"
             >
-              <p className="text-zt-gold font-medium text-lg">You are in. Welcome to ZoraTech.</p>
-              <p className="text-zt-text/50 text-sm mt-2">We will reach out when something new is ready.</p>
+              <p className="text-zt-gold font-medium text-lg">{t("success")}</p>
+              <p className="text-zt-text/50 text-sm mt-2">{t("successSub")}</p>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -49,7 +47,7 @@ export default function JoinTheDawn() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email address"
+                placeholder={t("placeholder")}
                 required
                 className="flex-1 px-5 py-4 rounded-full bg-zt-bg border border-zt-text/20 text-zt-text placeholder-zt-text/40 text-sm focus:outline-none focus:border-zt-gold/50 transition-colors duration-300"
               />
@@ -59,7 +57,7 @@ export default function JoinTheDawn() {
                 whileTap={{ scale: 0.98 }}
                 className="px-7 py-4 bg-zt-gold text-[#0F1A2E] font-semibold rounded-full text-sm tracking-wide hover:bg-zt-gold-hover transition-colors duration-300 whitespace-nowrap"
               >
-                Join the Community
+                {t("cta")}
               </motion.button>
             </form>
           )}

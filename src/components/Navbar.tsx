@@ -2,19 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import { useLocale, useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-
-const links = [
-  { label: "Home", href: "/" },
-  { label: "Apps", href: "/apps" },
-  { label: "Upcoming", href: "/upcoming" },
-  { label: "About", href: "/about" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
-];
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -43,10 +35,35 @@ function ThemeToggle() {
   );
 }
 
+function LangSwitch() {
+  const locale = useLocale();
+  const pathname = usePathname();
+  const href = locale === "en" ? `/sr${pathname}` : pathname.replace(/^\/sr/, "") || "/";
+  const label = locale === "en" ? "SR" : "EN";
+  return (
+    <a
+      href={href}
+      className="text-xs font-medium text-zt-text/40 hover:text-zt-gold transition-colors duration-300 tracking-widest uppercase"
+    >
+      {label}
+    </a>
+  );
+}
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations("nav");
+
+  const links = [
+    { label: t("home"), href: "/" },
+    { label: t("apps"), href: "/apps" },
+    { label: t("upcoming"), href: "/upcoming" },
+    { label: t("about"), href: "/about" },
+    { label: t("blog"), href: "/blog" },
+    { label: t("contact"), href: "/contact" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -81,7 +98,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop links + toggle */}
+          {/* Desktop links + toggles */}
           <div className="hidden md:flex items-center gap-8">
             {links.map((link) => (
               <Link
@@ -92,11 +109,13 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <LangSwitch />
             <ThemeToggle />
           </div>
 
-          {/* Mobile: toggle + hamburger */}
+          {/* Mobile: lang + theme + hamburger */}
           <div className="md:hidden flex items-center gap-3">
+            <LangSwitch />
             <ThemeToggle />
             <button
               type="button"
@@ -157,7 +176,7 @@ export default function Navbar() {
               transition={{ delay: 0.45 }}
               className="absolute bottom-10 text-zt-text/20 text-xs tracking-widest uppercase"
             >
-              Where warm technology meets human clarity
+              {t("tagline")}
             </motion.div>
           </motion.div>
         )}

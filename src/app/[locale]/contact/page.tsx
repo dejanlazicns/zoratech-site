@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useTranslations } from "next-intl";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
@@ -14,25 +15,10 @@ const fadeUp = (delay = 0) => ({
 
 const categories = ["Partnership", "Freelance", "Media", "Investor", "Other"];
 
-const contactTypes = [
-  {
-    icon: "🤝",
-    title: "Partnerships",
-    body: "Looking to collaborate or integrate?",
-  },
-  {
-    icon: "💼",
-    title: "Freelance",
-    body: "Designer, marketer, or video creator?",
-  },
-  {
-    icon: "📰",
-    title: "Media",
-    body: "Writing about ZoraTech?",
-  },
-];
-
 export default function ContactPage() {
+  const t = useTranslations("contact");
+  const contactTypes = t.raw("types") as Array<{ icon: string; title: string; body: string }>;
+
   const [form, setForm] = useState({ name: "", email: "", category: "", message: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
@@ -64,12 +50,12 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="pt-40 pb-16 px-6 text-center">
         <motion.div {...fadeUp()}>
-          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">Contact</p>
+          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">{t("label")}</p>
           <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-zt-text mb-6 leading-tight">
-            Let&apos;s build something<br className="hidden md:block" /> meaningful together.
+            {t("h1a")}<br className="hidden md:block" /> {t("h1b")}
           </h1>
           <p className="text-zt-text/50 text-lg max-w-xl mx-auto">
-            For partnerships, media, or freelance collaboration — reach out.
+            {t("sub")}
           </p>
         </motion.div>
       </section>
@@ -87,22 +73,22 @@ export default function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-center py-8"
               >
-                <p className="font-playfair text-zt-text text-2xl mb-3">Message received!</p>
-                <p className="text-zt-gold text-lg">We&apos;ll be in touch. 🌅</p>
+                <p className="font-playfair text-zt-text text-2xl mb-3">{t("successTitle")}</p>
+                <p className="text-zt-gold text-lg">{t("successSub")}</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 {/* Name */}
                 <div>
                   <label className="block text-zt-text/40 text-xs tracking-widest uppercase mb-2">
-                    Name <span className="text-zt-text/20">(optional)</span>
+                    {t("nameLabel")} <span className="text-zt-text/20">{t("nameOptional")}</span>
                   </label>
                   <input
                     type="text"
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="Your name"
+                    placeholder={t("namePlaceholder")}
                     className="w-full px-5 py-3 rounded-xl bg-zt-bg border border-zt-text/20 text-zt-text placeholder-zt-text/25 text-sm focus:outline-none focus:border-zt-gold/40 transition-colors duration-300"
                   />
                 </div>
@@ -110,14 +96,14 @@ export default function ContactPage() {
                 {/* Email */}
                 <div>
                   <label className="block text-zt-text/40 text-xs tracking-widest uppercase mb-2">
-                    Email <span className="text-red-400/60">*</span>
+                    {t("emailLabel")} <span className="text-red-400/60">*</span>
                   </label>
                   <input
                     type="email"
                     name="email"
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="your@email.com"
+                    placeholder={t("emailPlaceholder")}
                     required
                     className="w-full px-5 py-3 rounded-xl bg-zt-bg border border-zt-text/20 text-zt-text placeholder-zt-text/25 text-sm focus:outline-none focus:border-zt-gold/40 transition-colors duration-300"
                   />
@@ -125,17 +111,18 @@ export default function ContactPage() {
 
                 {/* Category */}
                 <div>
-                  <label className="block text-zt-text/40 text-xs tracking-widest uppercase mb-2">
-                    Category <span className="text-red-400/60">*</span>
+                  <label htmlFor="category" className="block text-zt-text/40 text-xs tracking-widest uppercase mb-2">
+                    {t("categoryLabel")} <span className="text-red-400/60">*</span>
                   </label>
                   <select
+                    id="category"
                     name="category"
                     value={form.category}
                     onChange={handleChange}
                     required
                     className="w-full px-5 py-3 rounded-xl bg-zt-bg border border-zt-text/10 text-zt-text text-sm focus:outline-none focus:border-zt-gold/40 transition-colors duration-300 appearance-none cursor-pointer"
                   >
-                    <option value="" disabled>Select a category</option>
+                    <option value="" disabled>{t("categoryPlaceholder")}</option>
                     {categories.map((c) => (
                       <option key={c} value={c}>{c}</option>
                     ))}
@@ -145,13 +132,13 @@ export default function ContactPage() {
                 {/* Message */}
                 <div>
                   <label className="block text-zt-text/40 text-xs tracking-widest uppercase mb-2">
-                    Message <span className="text-red-400/60">*</span>
+                    {t("messageLabel")} <span className="text-red-400/60">*</span>
                   </label>
                   <textarea
                     name="message"
                     value={form.message}
                     onChange={handleChange}
-                    placeholder="Tell us what you have in mind..."
+                    placeholder={t("messagePlaceholder")}
                     required
                     rows={5}
                     className="w-full px-5 py-3 rounded-xl bg-zt-bg border border-zt-text/20 text-zt-text placeholder-zt-text/25 text-sm focus:outline-none focus:border-zt-gold/40 transition-colors duration-300 resize-none"
@@ -159,7 +146,7 @@ export default function ContactPage() {
                 </div>
 
                 {status === "error" && (
-                  <p className="text-red-400/70 text-xs text-center">Something went wrong. Please try again.</p>
+                  <p className="text-red-400/70 text-xs text-center">{t("error")}</p>
                 )}
 
                 <button
@@ -167,7 +154,7 @@ export default function ContactPage() {
                   disabled={status === "loading"}
                   className="mt-2 w-full py-4 bg-zt-gold text-[#0F1A2E] font-semibold text-sm rounded-full hover:bg-zt-gold-hover transition-all duration-300 disabled:opacity-60 tracking-wide"
                 >
-                  {status === "loading" ? "Sending..." : "Send Message"}
+                  {status === "loading" ? t("sending") : t("send")}
                 </button>
               </form>
             )}

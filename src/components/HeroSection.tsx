@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 function fadeUp(delay: number) {
   return {
@@ -12,6 +13,8 @@ function fadeUp(delay: number) {
 }
 
 export default function HeroSection() {
+  const t = useTranslations("home.hero");
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="hero-gradient absolute inset-0 z-0" />
@@ -22,37 +25,33 @@ export default function HeroSection() {
           {...fadeUp(0.25)}
           className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-zt-text leading-tight mb-6"
         >
-          Where warm technology meets human clarity.
+          {t("h1")}
         </motion.h1>
 
         <motion.p
           {...fadeUp(0.45)}
           className="text-lg md:text-xl text-zt-text/60 max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          We build intelligent systems that feel like sunrise — calm, powerful, and human.
+          {t("sub")}
         </motion.p>
 
-        <motion.div
-          {...fadeUp(0.6)}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
+        <motion.div {...fadeUp(0.6)} className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/apps">
             <motion.button
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.98 }}
               className="px-8 py-4 bg-zt-gold text-[#0F1A2E] font-semibold rounded-full text-sm tracking-wide transition-all duration-300 hover:bg-zt-gold-hover"
             >
-              Explore Apps
+              {t("cta1")}
             </motion.button>
           </Link>
-
           <Link href="/upcoming">
             <motion.button
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.98 }}
               className="px-8 py-4 border border-zt-gold/50 text-zt-gold font-semibold rounded-full text-sm tracking-wide transition-all duration-300 hover:border-zt-gold hover:bg-zt-gold/10"
             >
-              Upcoming Projects
+              {t("cta2")}
             </motion.button>
           </Link>
         </motion.div>
@@ -64,7 +63,7 @@ export default function HeroSection() {
         transition={{ delay: 1.2, duration: 0.8 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-zt-text/30 text-xs tracking-widest uppercase">Scroll</span>
+        <span className="text-zt-text/30 text-xs tracking-widest uppercase">{t("scroll")}</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}

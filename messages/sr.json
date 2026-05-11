@@ -1,0 +1,195 @@
+{
+  "nav": {
+    "home": "Početna",
+    "apps": "Aplikacije",
+    "upcoming": "Uskoro",
+    "about": "O nama",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "tagline": "Gde topla tehnologija susreće ljudsku jasnoću"
+  },
+  "footer": {
+    "tagline": "Gde topla tehnologija susreće ljudsku jasnoću.",
+    "copyright": "© 2026 ZoraTech. Sva prava zadržana.",
+    "privacy": "Politika privatnosti",
+    "cookies": "Politika kolačića",
+    "terms": "Uslovi korišćenja"
+  },
+  "cookie": {
+    "message": "Koristimo samo neophodne kolačiće.",
+    "learnMore": "Saznaj više",
+    "accept": "Prihvati",
+    "decline": "Odbij"
+  },
+  "home": {
+    "hero": {
+      "h1": "Gde topla tehnologija susreće ljudsku jasnoću.",
+      "sub": "Gradimo inteligentne sisteme koji se osećaju kao zora — mirni, moćni i ljudski.",
+      "cta1": "Istraži aplikacije",
+      "cta2": "Predstojeći projekti",
+      "scroll": "Skroluj"
+    },
+    "featured": {
+      "label": "Istaknute aplikacije",
+      "h2a": "Alati koji čine život jednostavnijim.",
+      "h2b": "Inteligentni. Topli. Korisni.",
+      "learnMore": "Saznaj više →"
+    },
+    "upcoming": {
+      "label": "Uskoro",
+      "h2": "Budućnost se već oblikuje.",
+      "sub": "Pridruži se listama čekanja i oblikuj ono što dolazi.",
+      "viewAll": "Sve predstojeće aplikacije",
+      "cards": [
+        {
+          "tag": "U razvoju",
+          "name": "Uskoro",
+          "desc": "Nešto novo se oblikuje. Budi prvi koji će saznati kada stigne."
+        },
+        {
+          "tag": "Rani pristup",
+          "name": "Uskoro",
+          "desc": "Nov alat izgrađen za jasnoću i mir. Pridruži se listi čekanja."
+        },
+        {
+          "tag": "Planiranje",
+          "name": "Uskoro",
+          "desc": "Oblikujemo ideju. Tvoj doprinos može uticati na ono što ovo postaje."
+        }
+      ]
+    },
+    "what": {
+      "label": "Šta je ZoraTech",
+      "desc": "Tehnologija treba da se oseća kao svetlost, ne kao buka. ZoraTech stvara digitalne sisteme koji donose",
+      "descHighlight": "jasnoću, toplinu i inteligenciju",
+      "descEnd": "u svakodnevni život.",
+      "pillars": [
+        {
+          "title": "Inteligencija usmerena ka čoveku",
+          "desc": "Svaki sistem koji gradimo počinje od čoveka. Tehnologija koja se prilagođava tebi, a ne obrnuto."
+        },
+        {
+          "title": "Topla i mirna tehnologija",
+          "desc": "Bez buke. Bez preopterećenja. Samo jasnoća. Dizajniramo s toplinom da bi tehnologija bila kao pouzdan saputnik."
+        },
+        {
+          "title": "Sistemi koji donose red",
+          "desc": "Stvaramo inteligentnu infrastrukturu koja organizuje složenost, dajući ti prostor da misliš, stvaraš i živiš."
+        }
+      ]
+    },
+    "why": {
+      "label": "Zašto gradimo",
+      "quote1": "Verujemo da tehnologija treba da",
+      "quote2": "uzdiže, ne da preplavljuje.",
+      "quote3": "Treba da se oseća kao zora — trenutak",
+      "quote4": "jasnoće, nade i pravca."
+    },
+    "join": {
+      "label": "Pridruži se zori",
+      "h2": "Budi prvi koji će iskusiti nove aplikacije, ažuriranja i ideje.",
+      "sub": "Dobrodošao u zoru inteligentnih sistema.",
+      "placeholder": "Tvoja email adresa",
+      "cta": "Pridruži se zajednici",
+      "success": "Prijavljen si. Dobrodošao u ZoraTech.",
+      "successSub": "Javiće se kada nešto novo bude spremno."
+    }
+  },
+  "apps": {
+    "label": "Aplikacije",
+    "h1": "Svaka aplikacija koju gradimo rešava pravi problem.",
+    "sub": "Jednostavno. Jasno. Ljudski.",
+    "live": "Aktivno",
+    "learnMore": "Saznaj više",
+    "openApp": "Otvori aplikaciju"
+  },
+  "appDetail": {
+    "back": "← Nazad na aplikacije",
+    "openApp": "Otvori aplikaciju",
+    "comingSoon": "Uskoro",
+    "viewAll": "Sve aplikacije"
+  },
+  "upcoming": {
+    "label": "Uskoro",
+    "h1": "Budućnost se već oblikuje.",
+    "sub": "Pomozi da oblikuješ budućnost ZoraTech-a. Pridruži se listama čekanja i utiči na razvoj.",
+    "learnMore": "Saznaj više →"
+  },
+  "waitlist": {
+    "join": "Prijavi se",
+    "loading": "...",
+    "placeholder": "Unesi email adresu",
+    "success": "Na listi si! 🌅",
+    "duplicate": "Već si na listi!"
+  },
+  "about": {
+    "label": "O nama",
+    "h1a": "Gradimo tehnologiju",
+    "h1b": "koja se oseća kao zora.",
+    "sub": "Topla. Mirna. Inteligentna.",
+    "storyLabel": "Priča o osnivanju",
+    "story1": "Moje ime je Dejan. Imam 55 godina. Po struci sam automehaničar. Čovek koji je proveo ceo život radeći rukama, u mašinskom ulju, u buci, u stvarnom svetu.",
+    "story2": "I upravo zato sam razumeo nešto što mnogi nikada ne shvate: Tehnologija nije o mašinama. Tehnologija je o ljudima.",
+    "founder": "— Dejan Lazić, osnivač",
+    "missionLabel": "Misija",
+    "mission": "Stvarati digitalne sisteme koji donose jasnoću i harmoniju u svakodnevni život.",
+    "visionLabel": "Vizija",
+    "vision": "Svet u kome tehnologija podržava ljude — a ne obrnuto.",
+    "principlesLabel": "Naši principi",
+    "principles": [
+      {
+        "icon": "🤝",
+        "title": "Inteligencija usmerena ka čoveku",
+        "body": "Svaka odluka počinje jednim pitanjem: kako se ovo oseća osobi koja to koristi? Tehnologija mora da zasluži svoje mesto u ljudskom životu."
+      },
+      {
+        "icon": "🌅",
+        "title": "Topla i mirna tehnologija",
+        "body": "Odbacujemo buku, nered i hitnost. Naši proizvodi su osmišljeni da te uspore — na najbolji mogući način."
+      },
+      {
+        "icon": "🧭",
+        "title": "Sistemi koji donose red",
+        "body": "Složenost je neprijatelj jasnoće. Gradimo sisteme koji tiho rešavaju teške delove kako ti nikada ne bi morao."
+      }
+    ],
+    "manifestLabel": "ZoraTech manifest",
+    "manifest1": "Verujemo da svaka osoba — bez obzira na godine, poreklo ili stručnost — zaslužuje tehnologiju koja je poštuje.",
+    "manifest2": "Ne tehnologiju koja preplavljuje. Ne tehnologiju koja manipuliše. Ne tehnologiju koja zamenjuje ljudski dodir.",
+    "manifest3": "Tehnologija poput zore — tiha, neizbežna i puna mogućnosti.",
+    "manifestQuote": "\"Zora\" — srpska reč za početak novog dana."
+  },
+  "blog": {
+    "label": "Blog",
+    "h1": "Iza zore.",
+    "sub": "Vesti, priče i ideje iz ZoraTech-a.",
+    "readMore": "Čitaj više →",
+    "empty": "Nema objava u ovoj kategoriji.",
+    "categories": ["Sve", "Dev Log", "Ažuriranja", "Filozofija", "Iza kulisa"]
+  },
+  "contact": {
+    "label": "Kontakt",
+    "h1a": "Izgradimo zajedno nešto",
+    "h1b": "smisleno.",
+    "sub": "Za partnerstva, medije ili slobodnjačku saradnju — javi se.",
+    "namePlaceholder": "Tvoje ime",
+    "nameLabel": "Ime",
+    "nameOptional": "(opciono)",
+    "emailLabel": "Email",
+    "emailPlaceholder": "tvoj@email.com",
+    "categoryLabel": "Kategorija",
+    "categoryPlaceholder": "Izaberi kategoriju",
+    "messageLabel": "Poruka",
+    "messagePlaceholder": "Reci nam šta imaš na umu...",
+    "send": "Pošalji poruku",
+    "sending": "Slanje...",
+    "successTitle": "Poruka primljena!",
+    "successSub": "Javiće se uskoro. 🌅",
+    "error": "Nešto nije prošlo kako treba. Pokušaj ponovo.",
+    "types": [
+      { "icon": "🤝", "title": "Partnerstva", "body": "Želiš da sarađuješ ili integrišeš?" },
+      { "icon": "💼", "title": "Slobodnjaci", "body": "Dizajner, marketar ili video kreator?" },
+      { "icon": "📰", "title": "Mediji", "body": "Pišeš o ZoraTech-u?" }
+    ]
+  }
+}

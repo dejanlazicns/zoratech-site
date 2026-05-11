@@ -4,10 +4,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useTranslations } from "next-intl";
 import { blogPosts, type BlogCategory } from "@/lib/blog-data";
 
-const categories = ["All", "Dev Log", "App Updates", "Philosophy", "Behind the Scenes"] as const;
-type Filter = typeof categories[number];
+const categoryKeys = ["All", "Dev Log", "App Updates", "Philosophy", "Behind the Scenes"] as const;
+type Filter = typeof categoryKeys[number];
 
 const categoryColors: Record<BlogCategory, string> = {
   "Dev Log": "text-blue-400 border-blue-400/40 bg-blue-400/10",
@@ -16,7 +17,7 @@ const categoryColors: Record<BlogCategory, string> = {
   "Behind the Scenes": "text-zt-gold border-zt-gold/40 bg-zt-gold/10",
 };
 
-function BlogCard({ post, index }: { post: typeof blogPosts[0]; index: number }) {
+function BlogCard({ post, readMore, index }: { post: typeof blogPosts[0]; readMore: string; index: number }) {
   return (
     <motion.div
       layout
@@ -45,7 +46,7 @@ function BlogCard({ post, index }: { post: typeof blogPosts[0]; index: number })
         type="button"
         className="self-start px-5 py-2.5 border border-zt-gold/40 text-zt-gold text-sm font-medium rounded-full hover:border-zt-gold hover:bg-zt-gold/10 transition-all duration-300"
       >
-        Read More →
+        {readMore}
       </button>
     </motion.div>
   );
@@ -53,6 +54,9 @@ function BlogCard({ post, index }: { post: typeof blogPosts[0]; index: number })
 
 export default function BlogPage() {
   const [active, setActive] = useState<Filter>("All");
+  const t = useTranslations("blog");
+
+  const categoryLabels = t.raw("categories") as string[];
 
   const filtered = active === "All"
     ? blogPosts
@@ -69,11 +73,11 @@ export default function BlogPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
         >
-          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">Blog</p>
+          <p className="text-zt-gold text-xs font-medium tracking-widest uppercase mb-4">{t("label")}</p>
           <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-zt-text mb-4">
-            Behind the dawn.
+            {t("h1")}
           </h1>
-          <p className="text-zt-text/50 text-lg">Updates, stories, and ideas from ZoraTech.</p>
+          <p className="text-zt-text/50 text-lg">{t("sub")}</p>
         </motion.div>
       </section>
 
@@ -85,18 +89,18 @@ export default function BlogPage() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex flex-wrap justify-center gap-3"
         >
-          {categories.map((cat) => (
+          {categoryKeys.map((key, i) => (
             <button
-              key={cat}
+              key={key}
               type="button"
-              onClick={() => setActive(cat)}
+              onClick={() => setActive(key)}
               className={`px-5 py-2 rounded-full text-xs font-medium tracking-widest uppercase transition-all duration-300 border ${
-                active === cat
+                active === key
                   ? "bg-zt-gold text-[#0F1A2E] border-zt-gold"
                   : "border-zt-text/10 text-zt-text/40 hover:border-zt-gold/40 hover:text-zt-gold"
               }`}
             >
-              {cat}
+              {categoryLabels[i] ?? key}
             </button>
           ))}
         </motion.div>
@@ -112,7 +116,7 @@ export default function BlogPage() {
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
               >
                 {filtered.map((post, i) => (
-                  <BlogCard key={post.slug} post={post} index={i} />
+                  <BlogCard key={post.slug} post={post} readMore={t("readMore")} index={i} />
                 ))}
               </motion.div>
             ) : (
@@ -123,7 +127,7 @@ export default function BlogPage() {
                 exit={{ opacity: 0 }}
                 className="text-center text-zt-text/25 text-sm py-20"
               >
-                No posts in this category yet.
+                {t("empty")}
               </motion.p>
             )}
           </AnimatePresence>
