@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import CookieBanner from "@/components/CookieBanner";
 import ThemeProvider from "@/components/ThemeProvider";
@@ -22,6 +22,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!locales.includes(locale)) notFound();
 
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   return (

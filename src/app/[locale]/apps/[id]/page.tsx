@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { apps } from "@/lib/apps-data";
 
 export function generateStaticParams() {
@@ -11,7 +11,8 @@ export function generateStaticParams() {
 }
 
 export default async function AppDetailPage({ params }: { params: Promise<{ locale: string; id: string }> }) {
-  const { id } = await params;
+  const { locale, id } = await params;
+  setRequestLocale(locale);
   const app = apps.find((a) => a.id === id);
   if (!app) notFound();
 
