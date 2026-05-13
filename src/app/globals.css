@@ -6,7 +6,7 @@
 
 /* Light mode — warm sunrise palette */
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
   --shadow-navy: #0F1A2E;
   --sunrise-gold: #F6C98F;
   --soft-peach: #FAD7C4;
