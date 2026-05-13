@@ -4,9 +4,8 @@ import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { useLocale, useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -37,8 +36,8 @@ function ThemeToggle() {
 
 function LangSwitch() {
   const locale = useLocale();
-  const pathname = usePathname();
-  const href = locale === "en" ? `/sr${pathname}` : pathname.replace(/^\/sr/, "") || "/";
+  const pathname = usePathname(); // returns path WITHOUT locale prefix
+  const href = locale === "en" ? `/sr${pathname}` : pathname;
   const label = locale === "en" ? "SR" : "EN";
   return (
     <a
